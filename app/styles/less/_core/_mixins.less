@@ -1,0 +1,13 @@
+// ---------------------------------------------------
+// Mixins
+// ---------------------------------------------------
+.font-size-line-height(@font-size; @line-height) {
+    font-size: @font-size;
+    line-height: (@font-size * @line-height);
+}
+
+.border-radius(@border) {
+    border-radius: @border; 
+    -moz-border-radius: @border; 
+    -webkit-border-radius: @border;
+}

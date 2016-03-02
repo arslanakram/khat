@@ -1,0 +1,16 @@
+{
+  "name": "granza-base",
+  "version": "0.0.1",
+  "description": "granza-base description",
+  "author": "",
+  "devDependencies": {
+    "browser-sync": "~2.2.1",
+    "del": "~1.1.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "~2.5.0",
+    "gulp-less": "^3.0.5",
+    "gulp-premailer": "^0.4.0",
+    "gulp-rename": "~1.2.0",
+    "path": "^0.12.7"
+  }
+}

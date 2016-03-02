@@ -1,0 +1,52 @@
+// ---------------------------------------------------
+// Buttons
+// ---------------------------------------------------
+
+.btn-td {
+    text-align: center;
+    .border-radius(@btn-border-radius);
+
+    .btn {
+        font-size: @btn-font-size; 
+        line-height: @btn-line-height !important; 
+        font-weight: @btn-font-weight;
+        padding: 0 @btn-h-space;
+        text-align: center; 
+        text-decoration: none;
+        display: block; 
+        transition: all 100ms ease-in;
+        .border-radius(@btn-border-radius);
+    }
+
+    &.btn-dark {
+        background-color: @btn-dark-bg-color; 
+
+        .btn {
+            background-color: @btn-dark-bg-color; 
+            border: @btn-v-space solid @btn-dark-bg-color; 
+            color: @btn-dark-text-color; 
+
+            &:hover,  &:visited, &:active {
+                background-color: @btn-dark-hover-bg-color !important;
+                border-color: @btn-dark-hover-bg-color !important;
+                color: @btn-dark-hover-text-color !important;
+            }
+        }
+    }
+
+    &.btn-light {
+        background-color: @btn-light-bg-color; 
+
+        .btn {
+            background-color: @btn-light-bg-color; 
+            border: @btn-v-space solid @btn-light-bg-color; 
+            color: @gray-darker; 
+
+            &:hover,  &:visited, &:active {
+                background-color: @gray-light !important;
+                border-color: @gray-light !important;
+                color: @gray-darker !important;
+            }
+        }
+    }
+}

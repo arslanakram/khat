@@ -1,0 +1,144 @@
+// ---------------------------------------------------
+// Grid
+// ---------------------------------------------------
+
+.webkit,
+.outer { 
+    background: @template-bg; 
+    max-width: 600px;
+    Margin: 0 auto;
+}
+
+.outer { width: 100%; }
+
+.inner { padding: 0 @gutter; }
+
+// ---------------------------------------------------
+// Columns Reset
+// ---------------------------------------------------
+.two-column,
+.three-column,
+.four-column,
+.one-third-sidebar,
+.one-fourth-sidebar {
+    font-size: 0;
+    text-align: center; // To centralize 2/ 3 / left columns on gmail mobile app
+    
+    .column {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .contents { 
+        font-size: @body-font-size; 
+        text-align: left; 
+    }
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+// ---------------------------------------------------
+// Fluid Columns
+// ---------------------------------------------------
+.two-column.fluid .column           { max-width: 50%; }
+.three-column.fluid .column         { max-width: 33.33%; }
+.four-column.fluid .column          { max-width: 25%; }
+
+.one-third-sidebar.fluid {
+    .left                           { max-width: 33.33%; }
+    .right                          { max-width: 66.66%; }       
+}
+
+.one-fourth-sidebar.fluid {
+    .left                           { max-width: 25%; }
+    .right                          { max-width: 75%; }       
+}
+
+// ---------------------------------------------------
+// Fixed Columns
+// ---------------------------------------------------
+.two-column.fixed .column           { max-width: 300px; }
+.three-column.fixed .column         { max-width: 200px; }
+.four-column.fixed .column          { max-width: 150px; }
+
+.one-third-sidebar.fixed {
+    .left                           { max-width: 200px; }
+    .right                          { max-width: 400px; }       
+}
+
+.one-fourth-sidebar.fixed {
+    .left                           { max-width: 150px; }
+    .right                          { max-width: 450px; }       
+}
+
+// ---------------------------------------------------
+// Fixed Image
+// ---------------------------------------------------
+.two-column img.fixed               { max-width: 270px; Margin: auto; }
+
+.three-column img.fixed,
+.one-third-sidebar img.fixed        { max-width: 170px; Margin: auto; }
+
+.four-column img.fixed,          
+.one-fourth-sidebar img.fixed       { max-width: 120px; Margin: auto; }
+
+// ---------------------------------------------------
+// Media Queries
+// ---------------------------------------------------
+@media screen and (max-width: 400px) {
+    // Make all columns take 100% width on smaller screens where
+    // media queries are supported
+    .two-column .column,
+    .three-column .column,
+    .four-column .column,
+    .one-third-sidebar .left,
+    .one-third-sidebar .right,
+    .one-fourth-sidebar .left,
+    .one-fourth-sidebar .right  { 
+        max-width: 100% !important; 
+    }
+
+    // Fixed Images - Make images use fixed width
+    .two-column img.fixed           { width: 270px; }
+    .three-column img.fixed,
+    .one-third-sidebar img.fixed    { width: 170px; }
+    .four-column img.fixed,
+    .one-fourth-sidebar img.fixed   { width: 120px; }
+
+    // Reset & Centralize all images
+    .two-column,
+    .three-column,
+    .four-column,
+    .one-third-sidebar,
+    .one-fourth-sidebar {
+        text-align: center;
+
+        img                         { Margin: auto; display: block; }
+    }
+
+    // Fixed Layout images
+    .two-column.fixed img           { max-width: 100% !important; }
+    .three-column.fixed img,
+    .one-third-sidebar.fixed img,          
+    .four-column.fixed img,
+    .one-fourth-sidebar.fixed img   { max-width: 50% !important; }
+
+    // Centralize all text on smaller screens
+    .two-column,
+    .three-column,
+    .four-column, 
+    .one-third-sidebar,
+    .one-fourth-sidebar { 
+        .contents                   { text-align: center !important;}
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    .two-column.fixed .column       { max-width: 50% !important; }
+    .three-column.fixed .column     { max-width: 33% !important; }
+    .four-column.fixed .column      { max-width: 50% !important; }
+}
